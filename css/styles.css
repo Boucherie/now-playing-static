@@ -241,7 +241,6 @@ figure {
     .site-nav-item > .fa {
       font-size: 1.75rem;
     }
-
     .site-nav-item:hover {
       background-color: #333333;
       color: #ffffff;
@@ -265,7 +264,6 @@ figure {
     .movie-backdrop {
       display: block;
     }
-
     /*
       Hide the poster on mobile devices, only show backdrop
       TIP: Use media queries to reveal it on larger devices
@@ -282,26 +280,11 @@ figure {
       width: 100%;
       padding: 1em;
       color: #ffffff;
-
-      /*
-        Linear gradients are a bit of an advanced CSS3 feature.
-          As seen below you specify the linear-gradient as a value for
-          the `background-image` property. It creates a gradient with as many stops
-          as you care to define. To learn more about how it works, read this article
-          and the related docs: https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf#.6yl8vdmiv
-      */
-
       background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.7) 100%);
     }
-
-    /*
-      Hide the overview on mobile devices
-      TIP: Use media queries to reveal it on larger devices
-    */
     .movie-overview {
       display: block;
     }
-
     .movie-title-label {
       font-family: "Montserrat", "Source Code Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 0.7em;
@@ -310,33 +293,25 @@ figure {
       color: gold;
       margin: 0;
     }
-
     .movie-title {
       margin: 0;
       font-size: 2em;
       line-height: 1.1;
     }
-
-
     /* FOOTER styles */
     .site-footer {
       text-align: center;
       bottom: 0;
       display: flex;
-
     }
-
-
     .footer-nav-item {
       display: block;
       margin-right: 0.5em;
       text-align: center;
     }
-
     .footer-nav-list {
       margin-right: auto;
       margin-left:auto;
-      
       text-align: center;
       list-style-type: none;
     }
@@ -349,25 +324,233 @@ figure {
       background-color: black;
       color: white;
     }
-    /*
-      The :last-child pseudo-selector lets you select only the last element
-        within a containing element. Similarly, there's a :first-child pseudo-selector
-        to select the first child of a containing element.
-    */
-
-
-
     .about {
       padding: 1em;
+      margin-right: auto;
+      margin-left:auto;
     }
 
     .about > p {
-      margin: 0;
+      margin-right: auto;
+      margin-left:auto;
+    }
+  }
+
+
+
+  @media screen and (min-width: 992px) {
+      .site-logo {
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 50px;
+        height: 50px;
+        margin: 0 0 2rem;
+        z-index: 100;
+        text-align: center;
+
+      }
+
+      .site-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 4rem;
+        z-index: 99;
+        background-color: #ffffff;
+      }
+
+      .site-nav-list {
+        margin: 0;
+        padding: 4em 0 0;
+        text-align: center;
+        list-style-type: none;
+      }
+
+      .site-nav-item {
+        float: none;
+        width: 100%;
+        height: 60px;
+        padding: 0.75em;
+        font-family: "Montserrat", "Source Code Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 0.6em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .site-nav-item > .fa {
+        font-size: 1.75rem;
+      }
+      .site-nav-item:hover {
+        background-color: #333333;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .site-nav-item-label {
+        display: block;
+        margin-top: 0.5em;
+      }
+
+      main {
+        padding-left: 4rem;
+      }
+
+      .movie {
+        position: relative;
+        float: left;
+        width: 33.3333%;
+      }
+
+      .movie-poster,
+      .movie-backdrop {
+        display: block;
+      }
+      /*
+        Hide the poster on mobile devices, only show backdrop
+        TIP: Use media queries to reveal it on larger devices
+      */
+      .movie-poster {
+        display: none;
+      }
+
+      .movie-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 1em;
+        color: #ffffff;
+        background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+      }
+      .movie-overview {
+        display: none;
+      }
+
+      .movie:first-child {
+        width: 100%
+      }
+
+      .movie:first-child .movie-overview {
+        display: block;
+      }
+
+      .movie-title-label {
+        font-family: "Montserrat", "Source Code Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 0.7em;
+        line-height: 1;
+        text-transform: uppercase;
+        color: gold;
+        margin: 0;
+      }
+      .movie-title {
+        margin: 0;
+        font-size: 2em;
+        line-height: 1.1;
+      }
+      /* FOOTER styles */
+
+
+      .site-footer {
+        clear: both;
+        text-align: center;
+        bottom: 0;
+        display: flex;
+      }
+      .footer-nav-item {
+        display: block;
+        margin-right: 0.5em;
+        text-align: center;
+      }
+      .footer-nav-list {
+        margin-right: auto;
+        margin-left:auto;
+        text-align: center;
+        list-style-type: none;
+      }
+      .footer-nav,
+      .about {
+        display: inline-flex;
+        width: 50%;
+        padding-left: 4rem;
+        float: left;
+        background-color: black;
+        color: white;
+      }
+      .about {
+        padding: 1em;
+        margin-right: auto;
+        margin-left:auto;
+      }
+
+      .about > p {
+        margin-right: auto;
+        margin-left:auto;
+      }
     }
 
+    @media screen and (min-width: 1372px) {
+      .movie {
+        position: relative;
+        float: left;
+        width: 33.3333%;
+      }
+
+      .movie-poster,
+      .movie-backdrop {
+        display: block;
+      }
+      /*
+        Hide the poster on mobile devices, only show backdrop
+        TIP: Use media queries to reveal it on larger devices
+      */
+      .movie-poster {
+        display: none;
+      }
+
+      .movie-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 1em;
+        color: #ffffff;
+        background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+      }
+      .movie-overview {
+        display: none;
+      }
+
+      .movie:first-child, .movie:nth-child(2) {
+        width: 50%;
+        float: left;
+      }
+
+      .movie:first-child .movie-overview {
+        display: block;
+      }
+
+      .movie:nth-child(2) .movie-overview {
+        display: block;
+      }
+
+      .movie-title-label {
+        font-family: "Montserrat", "Source Code Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 0.7em;
+        line-height: 1;
+        text-transform: uppercase;
+        color: gold;
+        margin: 0;
+      }
+      .movie-title {
+        margin: 0;
+        font-size: 2em;
+        line-height: 1.1;
+      }
+      /* FOOTER styles */
 
 
-
-
-
-  }
+    }
